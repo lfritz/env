@@ -1,5 +1,7 @@
 # env
 
+[![Build Status](https://travis-ci.org/lfritz/env.svg?branch=master)](https://travis-ci.org/lfritz/env) [![Go Report Card](https://goreportcard.com/badge/github.com/lfritz/env)](https://goreportcard.com/report/github.com/lfritz/env)
+
 A library for loading environment variables
 
 Loading configuration from environment variables with `os.Getenv` can get tedious. This package
