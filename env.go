@@ -16,7 +16,6 @@ type Env struct {
 }
 
 func (e *Env) lookup(key string) (string, bool) {
-	key = e.prefix + key
 	if e.m != nil {
 		val, ok := e.m[key]
 		return val, ok
@@ -46,7 +45,7 @@ func (e *Env) Prefix(prefix string) *Env {
 func (e *Env) Load() error {
 	missing := []string{}
 	for _, v := range e.vars {
-		key := v.key()
+		key := e.prefix + v.key()
 		val, ok := e.lookup(key)
 		if ok {
 			if err := v.set(val); err != nil {

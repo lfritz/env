@@ -19,7 +19,13 @@ func TestMapSource(t *testing.T) {
 	e.String("BAR", nil, "irrelevant")
 	err = e.Load()
 	if err == nil {
-		t.Errorf("e.Load() didn't return error for missing variable")
+		t.Fatalf("e.Load() didn't return error for missing variable")
+	}
+
+	got := err.Error()
+	want := "missing environment variables: BAR"
+	if got != want {
+		t.Errorf("e.Load() returned error message '%v', want '%v'", got, want)
 	}
 }
 
@@ -45,6 +51,12 @@ func TestPrefixSource(t *testing.T) {
 	if err == nil {
 		t.Errorf("e.Load() didn't return error for missing variable")
 	}
+
+	got := err.Error()
+	want := "missing environment variables: PRE_BAR"
+	if got != want {
+		t.Errorf("e.Load() returned error message '%v', want '%v'", got, want)
+	}
 }
 
 func TestOSSource(t *testing.T) {
@@ -63,6 +75,12 @@ func TestOSSource(t *testing.T) {
 	err = e.Load()
 	if err == nil {
 		t.Errorf("e.Load() didn't return error for missing variable")
+	}
+
+	got := err.Error()
+	want := "missing environment variables: BAR"
+	if got != want {
+		t.Errorf("e.Load() returned error message '%v', want '%v'", got, want)
 	}
 }
 
