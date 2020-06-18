@@ -1,6 +1,6 @@
 # env
 
-[![Build Status](https://travis-ci.org/lfritz/env.svg?branch=master)](https://travis-ci.org/lfritz/env)
+![Go build, lint and test](https://github.com/lfritz/env/workflows/Go%20build,%20lint%20and%20test/badge.svg)
 [![GoDoc](https://godoc.org/github.com/lfritz/env?status.svg)](https://godoc.org/github.com/lfritz/env)
 [![Go Report Card](https://goreportcard.com/badge/github.com/lfritz/env)](https://goreportcard.com/report/github.com/lfritz/env)
 
