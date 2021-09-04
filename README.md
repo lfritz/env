@@ -33,7 +33,7 @@ Then, `Load` actually loads the variables:
 ```
 err := e.Load()
 if err != nil {
-	fmt.Printf("error: %s", e)
+	fmt.Printf("error: %s", err)
 }
 ```
 
